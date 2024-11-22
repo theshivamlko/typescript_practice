@@ -41,6 +41,7 @@ var person3 = {
 };
 console.log(person3);
 console.log(typeof person3);
+// Arrays
 console.log("Arrays ==========");
 var person6 = {
     name: "Shivam",
@@ -53,9 +54,19 @@ console.log(typeof person6.hobbies);
 console.log(typeof person6.ranks);
 var favorite;
 favorite = ["A", "B"];
+favorite.push("C");
 console.log(favorite);
 console.log(favorite.length);
 for (var _i = 0, favorite_1 = favorite; _i < favorite_1.length; _i++) {
     var i = favorite_1[_i];
     console.log(i.toLowerCase());
 }
+console.log("Tuple ==========");
+// Tuple
+var tuple = [1, "A"];
+var tuple2;
+// tuple.push(true) can accept given init type fo values only
+console.log(tuple);
+// you cannot assign values to tuple elements separately after the initial declaration
+tuple2 = [200, "Q"];
+console.log(tuple2);

@@ -70,9 +70,22 @@ console.log(typeof person6.ranks);
 
 let favorite:string[];
 favorite=["A","B"]
+favorite.push("C")
+
 console.log(favorite);
 console.log(favorite.length);
+
 
 for(const i of favorite)
     console.log(i.toLowerCase());
 
+console.log("Tuple ==========");
+
+// Tuple
+let tuple=[1,"A"];
+let tuple2:[number,string];
+// tuple.push(true) can accept given init type fo values only
+console.log(tuple);
+// you cannot assign values to tuple elements separately after the initial declaration
+tuple2=[200,"Q"];
+console.log(tuple2);
