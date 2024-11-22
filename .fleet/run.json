@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "browser",
+            "name": "Index HTML",
+            "url": "src/index.html",
+        },
+
+    ]
+}
