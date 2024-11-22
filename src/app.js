@@ -69,4 +69,6 @@ var tuple2;
 console.log(tuple);
 // you cannot assign values to tuple elements separately after the initial declaration
 tuple2 = [200, "Q"];
+var var1 = tuple2[0], var2 = tuple2[1];
 console.log(tuple2);
+console.log(var1);

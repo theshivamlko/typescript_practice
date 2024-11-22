@@ -82,10 +82,15 @@ for(const i of favorite)
 console.log("Tuple ==========");
 
 // Tuple
+// Tuple is like a Record in Dart
 let tuple=[1,"A"];
 let tuple2:[number,string];
 // tuple.push(true) can accept given init type fo values only
 console.log(tuple);
 // you cannot assign values to tuple elements separately after the initial declaration
 tuple2=[200,"Q"];
+const [var1,var2]=tuple2
 console.log(tuple2);
+console.log(var1);
+
+
