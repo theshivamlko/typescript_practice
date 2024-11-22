@@ -63,6 +63,7 @@ for (var _i = 0, favorite_1 = favorite; _i < favorite_1.length; _i++) {
 }
 console.log("Tuple ==========");
 // Tuple
+// Tuple is like a Record in Dart
 var tuple = [1, "A"];
 var tuple2;
 // tuple.push(true) can accept given init type fo values only
@@ -72,3 +73,20 @@ tuple2 = [200, "Q"];
 var var1 = tuple2[0], var2 = tuple2[1];
 console.log(tuple2);
 console.log(var1);
+var myEnum;
+(function (myEnum) {
+    myEnum[myEnum["LOADING"] = 0] = "LOADING";
+    myEnum[myEnum["RESULT"] = 2] = "RESULT";
+    myEnum[myEnum["ERROR"] = 3] = "ERROR";
+})(myEnum || (myEnum = {}));
+// Default values are 0,1,2 , can be changes
+console.log(myEnum);
+console.log(myEnum.LOADING);
+console.log(myEnum[1]);
+// Any
+var myArray1 = [1, "A", false];
+console.log(myArray1);
+console.log(myArray1[1]);
+console.log(typeof myArray1[1]);
+console.log(typeof myArray1);
+console.log(typeof myArray1);

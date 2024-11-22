@@ -93,4 +93,21 @@ const [var1,var2]=tuple2
 console.log(tuple2);
 console.log(var1);
 
+enum myEnum{
+    LOADING,
+    RESULT=2,
+    ERROR
+}
+// Default values are 0,1,2 , can be changes
+console.log(myEnum);
+console.log(myEnum.LOADING);
+console.log(myEnum[1]);
 
+// Any
+
+let myArray1:any=[1,"A",false]
+console.log(myArray1);
+console.log(myArray1[1]);
+console.log(typeof myArray1[1]);
+console.log(typeof myArray1);
+console.log(typeof myArray1);
