@@ -90,3 +90,15 @@ console.log(myArray1[1]);
 console.log(typeof myArray1[1]);
 console.log(typeof myArray1);
 console.log(typeof myArray1);
+// Union type
+// To tell we are fine either number or string
+function combine(inp1) {
+    if (typeof inp1 === 'number') {
+        console.log(inp1 + inp1);
+    }
+    else {
+        console.log(inp1 + inp1);
+    }
+}
+combine(2);
+combine("2");
