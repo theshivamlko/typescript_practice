@@ -92,13 +92,18 @@ console.log(typeof myArray1);
 console.log(typeof myArray1);
 // Union type
 // To tell we are fine either number or string
-function combine(inp1) {
+function combine(inp1, check) {
     if (typeof inp1 === 'number') {
         console.log(inp1 + inp1);
     }
     else {
         console.log(inp1 + inp1);
     }
+    if (check === "as-number") {
+        console.log(+inp1 + +inp1); // + garantee as Number, if string then + return NaN
+    }
+    else if (check === "as-text") {
+    }
 }
-combine(2);
-combine("2");
+combine("2", "as-number");
+combine(2, "as-text");
