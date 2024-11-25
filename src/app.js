@@ -90,9 +90,10 @@ console.log(myArray1[1]);
 console.log(typeof myArray1[1]);
 console.log(typeof myArray1);
 console.log(typeof myArray1);
-// Union type
-// To tell we are fine either number or string
-function combine(inp1, check) {
+// Union type , ensures type safety
+// To tell we are fine either data type ,number or string
+// check2 will only accept given 2 values only
+function combine(inp1, check, check2) {
     if (typeof inp1 === 'number') {
         console.log(inp1 + inp1);
     }
@@ -105,5 +106,35 @@ function combine(inp1, check) {
     else if (check === "as-text") {
     }
 }
-combine("2", "as-number");
-combine(2, "as-text");
+combine("2", "as-number", "as-number");
+combine(2, "as-text", "as-number");
+var var7 = 100;
+console.log(var7);
+var p = { name: 'A', age: 1 };
+function greet(user) {
+    console.log('Hi, I am ' + user.name);
+}
+function isOlder(user, checkAge) {
+    return checkAge > user.age;
+}
+// Functions
+function add2(n1, n2) {
+    return n1 + n2;
+}
+console.log('add2 ' + add2(2, 3));
+var combineValues = add;
+console.log(combineValues(1, 5));
+var combineValues2;
+combineValues2 = add;
+var combineValues3;
+// combineValues3=add // error
+// Callback
+function handler(n1, onClick) {
+    var res = n1 + n1;
+    var s = onClick(res);
+    console.log(s);
+}
+handler("b", function (s) {
+    console.log(s);
+    return s;
+});

@@ -116,7 +116,7 @@ console.log(typeof myArray1);
 // Union type , ensures type safety
 // To tell we are fine either data type ,number or string
 // check2 will only accept given 2 values only
-function combine(inp1: number | string, check: string,check2: "as-number" |"as-text") {
+function combine(inp1: number | string, check: string, check2: "as-number" | "as-text") {
 
     if (typeof inp1 === 'number') {
         console.log(inp1 + inp1)
@@ -133,6 +133,51 @@ function combine(inp1: number | string, check: string,check2: "as-number" |"as-t
     }
 }
 
-combine("2", "as-number","as-number")
-combine(2, "as-text","as-number")
+combine("2", "as-number", "as-number")
+combine(2, "as-text", "as-number")
+
+// Alias
+type AnyName = number;
+const var7: AnyName = 100;
+console.log(var7)
+
+type User = { name: string; age: number };
+const p: User = {name: 'A', age: 1}
+
+function greet(user: User) {
+    console.log('Hi, I am ' + user.name);
+}
+
+function isOlder(user: User, checkAge: number) {
+    return checkAge > user.age;
+}
+
+// Functions
+function add2(n1: number, n2: number): number {
+    return n1 + n2
+}
+
+console.log('add2 ' + add2(2, 3));
+
+let combineValues = add;
+console.log(combineValues(1, 5));
+
+let combineValues2: Function;
+combineValues2 = add;
+
+let combineValues3: (a: number, b: string) => void;
+// combineValues3=add // error
+
+// Callback
+function handler(n1: string, onClick: (arg: string) => string) {
+    let res = n1 + n1
+    let s = onClick(res)
+    console.log(s);
+
+}
+
+handler("b", (s) => {
+    console.log(s)
+    return s;
+});
 
