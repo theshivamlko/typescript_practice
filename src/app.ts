@@ -181,3 +181,24 @@ handler("b", (s) => {
     return s;
 });
 
+// unknown
+let var9: unknown
+let var10: any
+var9 = "A"
+var9 = 11
+var10 = "B"
+var10 = 10
+console.log(var9)
+console.log(typeof var9)
+console.log(var10)
+console.log(typeof var10)
+
+// never
+function error(e: string): never {
+    throw {message: e};
+}
+
+var c = error("Some error")
+console.log(c)
+
+

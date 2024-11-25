@@ -138,3 +138,20 @@ handler("b", function (s) {
     console.log(s);
     return s;
 });
+// unknown
+var var9;
+var var10;
+var9 = "A";
+var9 = 11;
+var10 = "B";
+var10 = 10;
+console.log(var9);
+console.log(typeof var9);
+console.log(var10);
+console.log(typeof var10);
+// never
+function error(e) {
+    throw { message: e };
+}
+var c = error("Some error");
+console.log(c);
