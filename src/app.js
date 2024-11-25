@@ -1,41 +1,42 @@
+"use strict";
 console.log("Hello World");
 // working with numbers
 function add(n1, n2) {
     return n1 + n2;
 }
-var number1 = 5;
-var number2 = 2.8;
-var number3 = '5';
-var number3_1 = '5'; // once set string is set for other var update
+const number1 = 5;
+const number2 = 2.8;
+let number3 = '5';
+let number3_1 = '5'; // once set string is set for other var update
 console.log(add(number1, number2));
 console.log(typeof number1);
 console.log(typeof number2);
 console.log(typeof number3);
-var number4 = '5';
-var number5 = true;
+const number4 = '5';
+const number5 = true;
 console.log(number4);
 console.log(number5);
 console.log(typeof number5);
 console.log(typeof number5);
 // Objects
-var person = {
+const person = {
     name: "Shivam",
     age: 30
 };
-var p1 = {
+const p1 = {
     name: "Shivam",
     age: 30
 };
 console.log(person);
 console.log(typeof person); // type object
 console.log(person.name); // type object
-var person2 = {
+const person2 = {
     name: "Shivam",
     age: 30
 };
 console.log(person2);
 console.log(typeof person2);
-var person3 = {
+const person3 = {
     name: "Shivam",
     age: 30
 };
@@ -43,7 +44,7 @@ console.log(person3);
 console.log(typeof person3);
 // Arrays
 console.log("Arrays ==========");
-var person6 = {
+const person6 = {
     name: "Shivam",
     age: 30,
     hobbies: ['Sports', 'Cooking'],
@@ -52,25 +53,23 @@ var person6 = {
 console.log(person6);
 console.log(typeof person6.hobbies);
 console.log(typeof person6.ranks);
-var favorite;
+let favorite;
 favorite = ["A", "B"];
 favorite.push("C");
 console.log(favorite);
 console.log(favorite.length);
-for (var _i = 0, favorite_1 = favorite; _i < favorite_1.length; _i++) {
-    var i = favorite_1[_i];
+for (const i of favorite)
     console.log(i.toLowerCase());
-}
 console.log("Tuple ==========");
 // Tuple
 // Tuple is like a Record in Dart
-var tuple = [1, "A"];
-var tuple2;
+let tuple = [1, "A"];
+let tuple2;
 // tuple.push(true) can accept given init type fo values only
 console.log(tuple);
 // you cannot assign values to tuple elements separately after the initial declaration
 tuple2 = [200, "Q"];
-var var1 = tuple2[0], var2 = tuple2[1];
+const [var1, var2] = tuple2;
 console.log(tuple2);
 console.log(var1);
 var myEnum;
@@ -84,7 +83,7 @@ console.log(myEnum);
 console.log(myEnum.LOADING);
 console.log(myEnum[1]);
 // Any
-var myArray1 = [1, "A", false];
+let myArray1 = [1, "A", false];
 console.log(myArray1);
 console.log(myArray1[1]);
 console.log(typeof myArray1[1]);
@@ -108,9 +107,9 @@ function combine(inp1, check, check2) {
 }
 combine("2", "as-number", "as-number");
 combine(2, "as-text", "as-number");
-var var7 = 100;
+const var7 = 100;
 console.log(var7);
-var p = { name: 'A', age: 1 };
+const p = { name: 'A', age: 1 };
 function greet(user) {
     console.log('Hi, I am ' + user.name);
 }
@@ -122,25 +121,25 @@ function add2(n1, n2) {
     return n1 + n2;
 }
 console.log('add2 ' + add2(2, 3));
-var combineValues = add;
+let combineValues = add;
 console.log(combineValues(1, 5));
-var combineValues2;
+let combineValues2;
 combineValues2 = add;
-var combineValues3;
+let combineValues3;
 // combineValues3=add // error
 // Callback
 function handler(n1, onClick) {
-    var res = n1 + n1;
-    var s = onClick(res);
+    let res = n1 + n1;
+    let s = onClick(res);
     console.log(s);
 }
-handler("b", function (s) {
+handler("b", (s) => {
     console.log(s);
     return s;
 });
 // unknown
-var var9;
-var var10;
+let var9;
+let var10;
 var9 = "A";
 var9 = 11;
 var10 = "B";
@@ -153,5 +152,11 @@ console.log(typeof var10);
 function error(e) {
     throw { message: e };
 }
-var c = error("Some error");
-console.log(c);
+try {
+    var c = error("Some error");
+    console.log(c);
+}
+catch (e) {
+    console.log(e);
+}
+console.log("2222");

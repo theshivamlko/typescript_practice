@@ -198,7 +198,14 @@ function error(e: string): never {
     throw {message: e};
 }
 
-var c = error("Some error")
-console.log(c)
+try {
+    var c = error("Some error")
+    console.log(c)
+} catch (e) {
+    console.log(e)
+
+}
+
+console.log("2222")
 
 
