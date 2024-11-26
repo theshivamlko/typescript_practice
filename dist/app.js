@@ -193,11 +193,14 @@ const var17 = (...numbers) => {
 var17(1, 2, 3, 34, 4, 5);
 // Classes
 class Department {
+    n;
     name = "DEFAULT VALUE";
+    salary = 0;
     //    constructor() {
     //        console.log(`Department constructor1 ${this} ${this.name}`)
     //    }
     constructor(n) {
+        this.n = n;
         this.name = n;
         console.log(`Department constructor2 ${this} ${this.name}`);
     }
@@ -207,6 +210,92 @@ console.log(`department ${department.name}`);
 //copy obj
 const departmentCopy = { name: department.name };
 console.log(`departmentCopy ${departmentCopy.name}`);
+// Shared value in instances
 const departmentCopy2 = { obj: department };
 department.name = "BB";
 console.log(`departmentCopy2 ${departmentCopy2.obj.name}`);
+class ITDepartment extends Department {
+    constructor() {
+        super("IT");
+    }
+    display() {
+        console.log(`display ${this.name}`);
+    }
+}
+const itDepart = new ITDepartment();
+console.log(`display ${itDepart.name}`);
+const emp1 = {
+    startDate: new Date(),
+    name: 'MAX',
+    privilage: ["AND"]
+};
+const emp2 = {
+    startDate: new Date(),
+    name: 'MAX'
+};
+console.log(`emp1 ${emp1.name} ${emp1.startDate}`);
+function add3(e) {
+    if ('privilage' in e) {
+        return `Admin: ${e.privilage}`;
+    }
+    if ('startDate' in e) {
+        return `Employee:`;
+    }
+    return "";
+}
+console.log(add3(emp1));
+// Type cast
+// Number to String
+let num = 42;
+let str = num.toString();
+// String to Number
+let strNum = "42";
+let numFromStr = Number(strNum);
+console.log(numFromStr);
+// Integer to Float
+let intNum = 42;
+let floatNum = intNum + 0.01; // Explicit type assertion 0.00 not adding
+console.log((floatNum));
+// Float to Integer (Truncation)
+let floatNum2 = 42.5;
+let intNum2 = Math.floor(floatNum2);
+console.log(intNum2);
+const errorBag = {
+    id: "111",
+    email: 'shivam@gmail.com',
+};
+// To check later
+//function sum(a: string, b: string): string;
+//function sum(a: number, b: string): string;
+//function sum(a: ElevatedEmployee2, b: ElevatedEmployee2): any {
+//    if ('props' in a) {
+//        return "${a.toString()}" + "${b.toString()}";
+//    } else if ('props3' in a) {
+//        return "2222";
+//    } else {
+//        const a1: ElevatedEmployee2 = {
+//            name: 'John Doe',
+//            startDate: new Date()
+//        };
+//        return a1;
+//    }
+//}
+//
+//console.log(sum(1, "2"));
+//console.log(sum("1", "2"));
+//sum(emp2, emp2);
+const userData = {
+    id: '1',
+    job: { title: "CEO" }
+};
+// console.log(userData?.abc ?? 'default value')
+let user1;
+const user2 = '';
+var user4 = user1 || 'DEFAULT'; // here user1 is undefined so default
+var user5 = user2 || 'DEFAULT'; // here user1 is empty so default
+var user6 = user2 ?? 'DEFAULT'; // here user1 is empty so default
+console.log(user1 ?? 'user1 default value'); // check null or undefined
+console.log(user2 ?? 'user2 default value');
+console.log(user4 ?? 'user4 default value');
+console.log(user5 ?? 'user5 default value');
+console.log(user6 ?? 'user6 default value');

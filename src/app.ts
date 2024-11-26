@@ -255,33 +255,160 @@ var17(1, 2, 3, 34, 4, 5)
 // Classes
 
 class Department {
-    name: string="DEFAULT VALUE";
+    name: string = "DEFAULT VALUE";
+    private salary: number = 0;
 
 //    constructor() {
 //        console.log(`Department constructor1 ${this} ${this.name}`)
 //    }
-    constructor(n:string) {
-        this.name=n;
+    constructor(readonly n: string) {
+        this.name = n;
         console.log(`Department constructor2 ${this} ${this.name}`)
     }
 
-    describe()
-{
+//    constructor(private n1: string,public n2:string) {
+//        this.name = n1;
+//        console.log(`Department constructor2 ${this} ${this.name}`)
+//    }
+}
 
-}}
-
-var department=new Department("AA");
+var department = new Department("AA");
 console.log(`department ${department.name}`)
 //copy obj
-const departmentCopy={name:department.name}
+const departmentCopy = {name: department.name}
 console.log(`departmentCopy ${departmentCopy.name}`)
 
 // Shared value in instances
-const departmentCopy2={obj:department}
-department.name="BB"
+const departmentCopy2 = {obj: department}
+department.name = "BB"
 console.log(`departmentCopy2 ${departmentCopy2.obj.name}`)
 
 
+class ITDepartment extends Department {
+    constructor() {
+        super("IT");
+    }
+
+    display() {
+        console.log(`display ${this.name}`)
+    }
+}
+
+const itDepart = new ITDepartment();
+console.log(`display ${itDepart.name}`)
+
+
+// Intersection, similar like interfaces
+type Admin = {
+    name: string;
+    privilage: string[]
+}
+type Employee = {
+    name: string;
+    startDate: Date
+}
+
+// object Intersection
+type  ElevatedEmployee = Admin & Employee;
+type  ElevatedEmployee2 = Admin | Employee;
+
+const emp1: ElevatedEmployee = {
+    startDate: new Date(),
+    name: 'MAX',
+    privilage: ["AND"]
+}
+const emp2: ElevatedEmployee2 = {
+    startDate: new Date(),
+    name: 'MAX'
+}
+console.log(`emp1 ${emp1.name} ${emp1.startDate}`)
+//data type Intersection
+type  Numeric = number | string;
+
+function add3(e: ElevatedEmployee): string {
+
+    if ('privilage' in e) {
+        return `Admin: ${e.privilage}`;
+    }
+    if ('startDate' in e) {
+        return `Employee:`;
+    }
+    return ""
+}
+
+console.log(add3(emp1));
+
+// Type cast
+// Number to String
+let num: number = 42;
+let str: string = num.toString();
+
+// String to Number
+let strNum: string = "42";
+let numFromStr: number = Number(strNum);
+console.log(numFromStr);
+
+// Integer to Float
+let intNum: number = 42;
+let floatNum: number = intNum + 0.01; // Explicit type assertion 0.00 not adding
+console.log((floatNum));
+
+// Float to Integer (Truncation)
+let floatNum2: number = 42.5;
+let intNum2: number = Math.floor(floatNum2);
+console.log(intNum2);
+
+interface ErrorContainer {
+    id: string // should be of same stype as prop
+    [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+    id: "111",
+    email: 'shivam@gmail.com',
+}
+
+// To check later
+//function sum(a: string, b: string): string;
+//function sum(a: number, b: string): string;
+//function sum(a: ElevatedEmployee2, b: ElevatedEmployee2): any {
+//    if ('props' in a) {
+//        return "${a.toString()}" + "${b.toString()}";
+//    } else if ('props3' in a) {
+//        return "2222";
+//    } else {
+//        const a1: ElevatedEmployee2 = {
+//            name: 'John Doe',
+//            startDate: new Date()
+//        };
+//        return a1;
+//    }
+//}
+//
+//console.log(sum(1, "2"));
+//console.log(sum("1", "2"));
+//sum(emp2, emp2);
+
+
+const userData = {
+    id: '1',
+    job: {title: "CEO"}
+}
+
+// console.log(userData?.abc ?? 'default value')
+
+
+let user1;
+const user2 = '';
+var user4:string = user1 || 'DEFAULT'; // here user1 is undefined so default
+var user5:string = user2 || 'DEFAULT'; // here user1 is empty so default
+var user6:string = user2 ?? 'DEFAULT'; // here user1 is empty so default
+
+console.log(user1 ?? 'user1 default value') // check null or undefined
+console.log(user2 ?? 'user2 default value')
+console.log(user4 ?? 'user4 default value')
+console.log(user5 ?? 'user5 default value')
+console.log(user6 ?? 'user6 default value')
 
 
 
