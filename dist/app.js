@@ -137,6 +137,21 @@ handler("b", (s) => {
     console.log(s);
     return s;
 });
+const var12 = function () {
+};
+const var13 = () => {
+};
+const var14 = () => console.log("Inline func");
+// b has default arguments, start from right
+const var15 = (s, b = "B") => {
+    console.log(s + b);
+};
+var15(1);
+const var16 = (s, b) => {
+    console.log(`${s} ${b}`);
+};
+var16(10);
+var16(10, "CC");
 // unknown
 let var9;
 let var10;
@@ -160,3 +175,7 @@ catch (e) {
     console.log(e);
 }
 console.log("2222");
+var var11 = 100; // once assigned type is fixed
+() => {
+    let old = "AAA";
+};

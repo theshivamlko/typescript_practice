@@ -1,10 +1,12 @@
 {
     "configurations": [
         {
-            "type": "browser",
-            "name": "Index HTML",
-            "url": "src/index.html",
+            "type": "command",
+            "name": "Localhost",
+            "program": "npm",
+            "args": [
+                "start"
+            ],
         },
-
     ]
 }
