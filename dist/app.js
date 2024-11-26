@@ -179,3 +179,9 @@ var var11 = 100; // once assigned type is fixed
 () => {
     let old = "AAA";
 };
+// SPread
+var list1 = [1, 2, 3];
+var list2 = [...list1];
+const map1 = { a: "A" };
+const map2 = { ...map1 };
+console.log(map2);
