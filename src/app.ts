@@ -187,21 +187,19 @@ const var12 = function () {
 const var13 = () => {
 
 }
-const var14=() => console.log("Inline func")
+const var14 = () => console.log("Inline func")
 
 // b has default arguments, start from right
-const var15 = (s:number,b:string="B") => {
-    console.log(s+b)
+const var15 = (s: number, b: string = "B") => {
+    console.log(s + b)
 }
 var15(1)
 
-const var16 = (s:number,b?:string) => {
+const var16 = (s: number, b?: string) => {
     console.log(`${s} ${b}`)
 }
 var16(10)
-var16(10,"CC")
-
-
+var16(10, "CC")
 
 
 // unknown
@@ -237,11 +235,51 @@ var var11 = 100; // once assigned type is fixed
 }
 
 // SPread
-var list1=[1,2,3]
-var list2=[...list1]
-const map1={a:"A"}
-const map2={...map1}
+var list1 = [1, 2, 3]
+var list2 = [...list1]
+const map1 = {a: "A"}
+const map2 = {...map1}
 console.log(map2)
+
+
+const var17 = (...numbers: number[]) => {
+
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i])
+
+    }
+}
+var17(1, 2, 3, 34, 4, 5)
+
+
+// Classes
+
+class Department {
+    name: string="DEFAULT VALUE";
+
+//    constructor() {
+//        console.log(`Department constructor1 ${this} ${this.name}`)
+//    }
+    constructor(n:string) {
+        this.name=n;
+        console.log(`Department constructor2 ${this} ${this.name}`)
+    }
+
+    describe()
+{
+
+}}
+
+var department=new Department("AA");
+console.log(`department ${department.name}`)
+//copy obj
+const departmentCopy={name:department.name}
+console.log(`departmentCopy ${departmentCopy.name}`)
+
+// Shared value in instances
+const departmentCopy2={obj:department}
+department.name="BB"
+console.log(`departmentCopy2 ${departmentCopy2.obj.name}`)
 
 
 
