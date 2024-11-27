@@ -476,5 +476,5 @@ function  createCourseGoal(
 var course1=createCourseGoal( 'Shivam', 'string', new Date())
 console.log(`course1 ${course1.title} ${course1.date}`)
 
-
+// Readonly
 const names2:Readonly<string[]>=['A','B']
