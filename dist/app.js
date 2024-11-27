@@ -299,3 +299,42 @@ console.log(user2 ?? 'user2 default value');
 console.log(user4 ?? 'user4 default value');
 console.log(user5 ?? 'user5 default value');
 console.log(user6 ?? 'user6 default value');
+// Generics
+const names = ['MAX', 'Mannual'];
+names.forEach((s) => {
+    console.log(`names ${s}`);
+});
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("DONE");
+    }, 1000);
+});
+promise.then((r) => {
+    console.log(`promise ${r}`);
+});
+function merge(objA, objB) {
+    return Object.assign(objA, objB);
+}
+const mergeObj = merge({ name: "Shivam" }, { age: "31" });
+console.log(`promise ${mergeObj.age} ${typeof mergeObj}`);
+function countAndPrint(element) {
+    let description = 'Got no value';
+    if (element.length > 0) {
+        description = `Got ${element.length} value`;
+    }
+    return [element, description];
+}
+function extract(obj, key) {
+    return 'Value: ' + obj[key];
+}
+console.log(extract({ name: 'Max' }, "name"));
+function createCourseGoal(title, description, date) {
+    // Make compulsory param as partial to be initialized later
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.date = date;
+    return courseGoal;
+}
+var course1 = createCourseGoal('Shivam', 'string', new Date());
+console.log(`course1 ${course1.title} ${course1.date}`);

@@ -1,3 +1,4 @@
+
 console.log("Hello World")
 
 // working with numbers
@@ -394,15 +395,14 @@ const userData = {
     id: '1',
     job: {title: "CEO"}
 }
-
 // console.log(userData?.abc ?? 'default value')
 
 
 let user1;
 const user2 = '';
-var user4:string = user1 || 'DEFAULT'; // here user1 is undefined so default
-var user5:string = user2 || 'DEFAULT'; // here user1 is empty so default
-var user6:string = user2 ?? 'DEFAULT'; // here user1 is empty so default
+var user4: string = user1 || 'DEFAULT'; // here user1 is undefined so default
+var user5: string = user2 || 'DEFAULT'; // here user1 is empty so default
+var user6: string = user2 ?? 'DEFAULT'; // here user1 is empty so default
 
 console.log(user1 ?? 'user1 default value') // check null or undefined
 console.log(user2 ?? 'user2 default value')
@@ -410,6 +410,71 @@ console.log(user4 ?? 'user4 default value')
 console.log(user5 ?? 'user5 default value')
 console.log(user6 ?? 'user6 default value')
 
+// Generics
+const names: Array<string> = ['MAX', 'Mannual']
+names.forEach((s) => {
+    console.log(`names ${s}`)
+});
 
 
+const promise: Promise<string> = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("DONE")
+    }, 1000)
+})
+promise.then((r) => {
+    console.log(`promise ${r}`)
+})
 
+
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+    return Object.assign(objA, objB);
+}
+
+const mergeObj = merge({name: "Shivam"}, {age: "31"})
+console.log(`promise ${mergeObj.age} ${typeof mergeObj}`)
+
+interface Lengthy {
+    length: number
+}
+
+function countAndPrint<T extends Lengthy>(element: T):[T,string] {
+    let description = 'Got no value'
+    if (element.length > 0) {
+        description = `Got ${element.length} value`
+    }
+    return [element,description];
+}
+
+function extract<T extends object,U extends  keyof T>(obj: T,key:U) {
+
+    return 'Value: '+obj[key];
+}
+
+console.log(extract({name:'Max'},"name"))
+
+
+interface CourseGoal{
+    title:string;
+    description:string;
+    date:Date
+}
+
+
+function  createCourseGoal(
+    title:string,
+    description:string,
+    date:Date
+): CourseGoal{
+    // Make compulsory param as partial to be initialized later
+    let courseGoal:Partial<CourseGoal> = {};
+    courseGoal.title=title;
+    courseGoal.description=description;
+    courseGoal.date=date;
+    return  courseGoal as CourseGoal;
+}
+var course1=createCourseGoal( 'Shivam', 'string', new Date())
+console.log(`course1 ${course1.title} ${course1.date}`)
+
+
+const names2:Readonly<string[]>=['A','B']
