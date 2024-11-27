@@ -481,3 +481,16 @@ const names2:Readonly<string[]>=['A','B']
 
 // Decorator
 
+function  Logger(target:Function){
+    console.log('Logger...') // prints first before Person2()
+    console.log(target)
+}
+@Logger
+class Person2{
+    name='Decorator'
+    constructor() {
+        console.log('Creating person object...')
+    }
+}
+const pers=new Person2()
+console.log(pers)
