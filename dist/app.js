@@ -347,8 +347,17 @@ console.log(`course1 ${course1.title} ${course1.date}`);
 // Readonly
 const names2 = ['A', 'B'];
 // Decorator
-function Logger(target) {
-    console.log('Logger...');
+//function  Logger(target:Function){
+function Logger(param) {
+    return function (target) {
+        console.log('Logger...'); // prints first before Person2()
+        console.log(target);
+        console.log(param);
+    };
+}
+function Log(target, property) {
+    console.log("Log...");
+    console.log(property);
     console.log(target);
 }
 let Person2 = class Person2 {
@@ -357,8 +366,11 @@ let Person2 = class Person2 {
         console.log('Creating person object...');
     }
 };
+__decorate([
+    Log
+], Person2.prototype, "name", void 0);
 Person2 = __decorate([
-    Logger
+    Logger('PARAM1')
 ], Person2);
 const pers = new Person2();
 console.log(pers);

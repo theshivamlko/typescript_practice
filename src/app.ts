@@ -481,12 +481,23 @@ const names2:Readonly<string[]>=['A','B']
 
 // Decorator
 
-function  Logger(target:Function){
-    console.log('Logger...') // prints first before Person2()
+//function  Logger(target:Function){
+function  Logger(param:string){
+   return  function(target:Function){
+       console.log('Logger...') // prints first before Person2()
+       console.log(target)
+       console.log(param)
+   };
+}
+
+function Log(target:any,property:string){
+    console.log("Log...")
+    console.log(property)
     console.log(target)
 }
-@Logger
+@Logger('PARAM1')
 class Person2{
+    @Log
     name='Decorator'
     constructor() {
         console.log('Creating person object...')
