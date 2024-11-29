@@ -1,12 +1,10 @@
 
 
-/// <reference path="base-components.ts"/>
-/// <reference path="../decorator/auto-bind.ts"/>
-/// <reference path="../models/drag-drop-interfaces.ts"/>
-import { Component} from "./base-components.js";
-import { Draggable} from "../models/drag-drop-interfaces.js";
-import { Project } from "../models/project-module.js";
-import { autobind } from "../decorator/auto-bind.js";
+
+import { Component} from "./base-components";
+import { Draggable} from "../models/drag-drop-interfaces";
+import { Project } from "../models/project-module";
+import { autobind } from "../decorator/auto-bind";
 
 
 

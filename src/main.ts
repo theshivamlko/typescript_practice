@@ -1,20 +1,11 @@
-// or import like this, with namespace
-/// <reference path="models/drag-drop-interfaces.ts"/>
-/// <reference path="models/project-module.ts"/>
-/// <reference path="state/project-state.ts"/>
-/// <reference path="utils/validation.ts"/>
-/// <reference path="decorator/auto-bind.ts"/>
-/// <reference path="components/project-input.ts"/>
-/// <reference path="components/project-items.ts"/>
-/// <reference path="components/project-list.ts"/>
 
-import { ProjectInput } from "./components/project-input.js";
-import { ProjectList } from "./components/project-list.js";
+import { ProjectInput } from "./components/project-input";
+import { ProjectList } from "./components/project-list";
 
 
 // or import like this
 //import DragTarget = DDInterfaces1.DragTarget;
-//import Draggable = DDInterfaces1.Draggable;
+//import Draggable = DDInterfacesg1.Draggable;
 
 // or import like this , namespace not needed
 //import { Draggable, DragTarget } from './drag-drop-interfaces';

@@ -1,5 +1,4 @@
-
-// import { validateString } from './app2';
+ import { validateString } from './app2';
 
 
 console.log("Hello World")
@@ -510,4 +509,4 @@ const pers=new Person2()
 console.log(pers)
 
 // Import ES6
-// validateString("hello")
+validateString("hello")

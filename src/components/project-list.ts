@@ -1,16 +1,10 @@
-/// <reference path="base-components.ts"/>
-/// <reference path="../decorator/auto-bind.ts"/>
 
-import {Draggable, DragTarget } from "../models/drag-drop-interfaces.js";
-import { Component } from "./base-components.js";
-import { autobind } from "../decorator/auto-bind.js";
-import { Project, ProjectStatus } from "../models/project-module.js";
-import { ProjectItem } from "../components/project-items.js";
-import { projectState } from "../state/project-state.js";
-
-/// <reference path="../state/project-state.ts>
-/// <reference path="../models/drag-drop-interfaces.ts>
-
+import { DragTarget } from "../models/drag-drop-interfaces";
+import { Component } from "./base-components";
+import { autobind } from "../decorator/auto-bind";
+import { Project, ProjectStatus } from "../models/project-module";
+import { ProjectItem } from "../components/project-items";
+import { projectState } from "../state/project-state";
 
 
 // ProjectList Class

@@ -1,4 +1,4 @@
-import { Project, ProjectStatus } from "../models/project-module.js";
+import { Project, ProjectStatus } from "../models/project-module";
 
 
 

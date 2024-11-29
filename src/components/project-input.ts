@@ -1,13 +1,10 @@
 /// <reference path="base-components.ts"/>
 /// <reference path="../decorator/auto-bind.ts"/>
 
-import { projectState } from "../state/project-state.js";
-import { Validatable,validate } from "../utils/validation.js";
-import { Component} from "./base-components.js";
-import { autobind } from "../decorator/auto-bind.js";
-
-/// <reference path="../utils/validation.ts>
-/// <reference path="../state/project-state.ts>
+import { projectState } from "../state/project-state";
+import { Validatable,validate } from "../utils/validation";
+import { Component} from "./base-components";
+import { autobind } from "../decorator/auto-bind";
 
 
   // ProjectInput Class
