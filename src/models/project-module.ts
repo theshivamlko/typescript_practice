@@ -1,4 +1,4 @@
-namespace DDInterfaces1 {
+
 
   export enum ProjectStatus {
     Active,
@@ -15,4 +15,3 @@ namespace DDInterfaces1 {
     ) {
     }
   }
-}

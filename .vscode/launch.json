@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}",
+            "args": ["start"]
+        }
+    ]
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // add configuration to run tytpe script
+}

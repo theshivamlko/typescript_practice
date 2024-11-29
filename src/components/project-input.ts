@@ -1,9 +1,15 @@
 /// <reference path="base-components.ts"/>
 /// <reference path="../decorator/auto-bind.ts"/>
+
+import { projectState } from "../state/project-state.js";
+import { Validatable,validate } from "../utils/validation.js";
+import { Component} from "./base-components.js";
+import { autobind } from "../decorator/auto-bind.js";
+
 /// <reference path="../utils/validation.ts>
 /// <reference path="../state/project-state.ts>
 
-namespace DDInterfaces1 {
+
   // ProjectInput Class
   export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     titleInputElement: HTMLInputElement;
@@ -83,4 +89,3 @@ namespace DDInterfaces1 {
   }
 
 
-}

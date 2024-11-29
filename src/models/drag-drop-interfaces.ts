@@ -1,6 +1,6 @@
 // Drag & Drop Interfaces
 
-namespace DDInterfaces1{ // not JS feature
+    // not JS feature
     //will convert to object
     export interface Draggable {
         dragStartHandler(event: DragEvent): void;
@@ -22,4 +22,3 @@ namespace DDInterfaces1{ // not JS feature
         // Class definition here
     }
 
-}

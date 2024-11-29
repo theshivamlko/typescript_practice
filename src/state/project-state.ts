@@ -1,8 +1,7 @@
+import { Project, ProjectStatus } from "../models/project-module.js";
 
 
 
-
-namespace DDInterfaces1{
   // Project State Management
   type Listener<T> = (items: T[]) => void;
 
@@ -60,4 +59,3 @@ namespace DDInterfaces1{
 
   export const projectState = ProjectState.getInstance();
 
-}

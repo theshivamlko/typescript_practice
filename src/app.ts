@@ -1,4 +1,7 @@
 
+// import { validateString } from './app2';
+
+
 console.log("Hello World")
 
 // working with numbers
@@ -505,3 +508,6 @@ class Person2{
 }
 const pers=new Person2()
 console.log(pers)
+
+// Import ES6
+// validateString("hello")
