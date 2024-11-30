@@ -2,6 +2,8 @@
 import { ProjectInput } from "./components/project-input";
 import { ProjectList } from "./components/project-list";
 
+import dash from 'lodash';
+
 
 // or import like this
 //import DragTarget = DDInterfaces1.DragTarget;
@@ -15,8 +17,13 @@ import { ProjectList } from "./components/project-list";
 
 
 
+
+
     new ProjectInput();
     new ProjectList('active');
     new ProjectList('finished');
 
+    console.log(dash.shuffle([1,2,3]))
+
+ 
 
